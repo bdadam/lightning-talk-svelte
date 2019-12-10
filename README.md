@@ -1,1 +1,1 @@
-# lightning-talk-svelte
+# Presentation for "Quick Intro to Svelte"
