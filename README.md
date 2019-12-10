@@ -1,1 +1,1 @@
-# Presentation for "Quick Intro to Svelte"
+# Quick Intro to Svelte
