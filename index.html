@@ -1,232 +1,110 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Quick Intro to Svelte</title>
-    <meta charset="utf-8" />
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(
-        https://fonts.googleapis.com/css?family=Droid+Serif:400,
-        700,
-        400italic
-      );
-      @import url(
-        https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,
-        700,
-        400italic
-      );
+    <head>
+        <title>Quick Intro to Svelte</title>
+        <meta charset="utf-8" />
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+            @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400, 700, 400italic);
+            @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400, 700, 400italic);
 
-      body {
-        font-family: "Droid Serif";
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: "Yanone Kaffeesatz";
-        font-weight: normal;
-      }
+            body {
+                font-family: 'Droid Serif';
+            }
+            h1,
+            h2,
+            h3 {
+                font-family: 'Yanone Kaffeesatz';
+                font-weight: normal;
+            }
 
-      blockquote {
-        border-left: 5px solid #cdcdcd;
-        padding-left: 20px;
-      }
+            blockquote {
+                border-left: 5px solid #cdcdcd;
+                padding-left: 20px;
+            }
 
-      .unsplash-credit {
-        padding: 0;
-        position: fixed;
-        bottom: 32px;
-        right: 32px;
-      }
+            .unsplash-credit {
+                padding: 0;
+                position: fixed;
+                bottom: 32px;
+                right: 32px;
+            }
 
-      .unsplash-credit a::before {
-        content: "Photo: ";
-        display: inline;
-      }
+            .unsplash-credit a::before {
+                content: 'Photo: ';
+                display: inline;
+            }
 
-      .unsplash-credit a {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        text-decoration: none;
-        padding: 3px 4px;
-        font-family: -apple-system, BlinkMacSystemFont, San Francisco,
-          Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial,
-          sans-serif;
-        font-size: 12px;
-        line-height: 1.2;
-        display: inline-block;
-        border-radius: 3px;
-      }
+            .unsplash-credit a {
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                text-decoration: none;
+                padding: 3px 4px;
+                font-family: -apple-system, BlinkMacSystemFont, San Francisco, Helvetica Neue, Helvetica, Ubuntu, Roboto,
+                    Noto, Segoe UI, Arial, sans-serif;
+                font-size: 12px;
+                line-height: 1.2;
+                display: inline-block;
+                border-radius: 3px;
+            }
 
-      a {
-        color: #8888cc;
-      }
+            a {
+                color: #8888cc;
+            }
 
-      .mt50 {
-        margin-top: 50px;
-      }
+            .mt50 {
+                margin-top: 50px;
+            }
 
-      .shadow {
-        background-color: rgba(0, 0, 0, 0.55);
-        padding: 12px;
-      }
+            .shadow {
+                background-color: rgba(0, 0, 0, 0.55);
+                padding: 12px;
+            }
 
-      .bright-text.remark-slide-content h1 {
-        font-size: 5rem;
-        /* background-color: rgba(0, 0, 0, 0.45); */
-        /* padding: 8px; */
-      }
+            .bright-text.remark-slide-content h1 {
+                font-size: 5rem;
+                /* background-color: rgba(0, 0, 0, 0.45); */
+                /* padding: 8px; */
+            }
 
-      .bright-text.remark-slide-content > p,
-      .bright-text.remark-slide-content > blockquote {
-        font-size: 1.5rem;
-        line-height: 1.5;
-        /* background-color: rgba(0, 0, 0, 0.45); */
-        /* padding: 4px; */
-      }
+            .bright-text.remark-slide-content > p,
+            .bright-text.remark-slide-content > blockquote {
+                font-size: 1.5rem;
+                line-height: 1.5;
+                /* background-color: rgba(0, 0, 0, 0.45); */
+                /* padding: 4px; */
+            }
 
-      .remark-container {
-        /* background-color: #fca; */
-      }
-      .remark-code,
-      .remark-inline-code {
-        font-family: "Ubuntu Mono";
-      }
+            .remark-container {
+                /* background-color: #fca; */
+            }
+            .remark-code,
+            .remark-inline-code {
+                font-family: 'Ubuntu Mono';
+            }
 
-      .bright-text {
-        color: #fff;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7 5);
-      }
-    </style>
-  </head>
-  <body>
-    <textarea id="source">
+            .bright-text {
+                color: #fff;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7 5);
+            }
+        </style>
+    </head>
+    <body>
+        <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+        <script>
+            function revealIframes() {
+                const iframes = document.querySelectorAll('.remark-visible iframe[data-src]');
+                iframes.forEach(i => (i.src = i.getAttribute('data-src')));
+            }
 
-class: center, middle
-background-image: url(images/svelte-logo-outline.svg)
-background-size: contain
+            const slideshow = remark.create({
+                ratio: '16:9',
+                sourceUrl: 'slides.md',
+            });
 
-# Quick Intro to Svelte
+            revealIframes();
 
----
-
-class: middle, center
-
-# Adam Beres-Deak
-### Tech Lead @ as24/cxp/acquisition
-
-
-@bdadamm | me@bdadam.com
-
----
-
-background-image: url(images/svelte-logo-outline.svg)
-background-size: contain
-
-# Svelte
-
----
-
-class: middle, center
-
-### Pronounciation
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PaOzcDCaSu0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
-
----
-
-background-image: url(https://source.unsplash.com/0j-y7NTkyKM)
-background-size: contain
-
-### Slim and Elegant
-
-.unsplash-credit[
-<a href="https://unsplash.com/photos/0j-y7NTkyKM" target="_blank" rel="noopener noreferrer">Rodolfo Marques</a>
-]
-
----
-
-class: bright-text
-background-image: url(https://source.unsplash.com/f_rLDn5m2XQ)
-
-.shadow[
-# What is Svelte?
-
-
-> Svelte is a radical new approach to building user interfaces. Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, Svelte shifts that work into a compile step that happens when you build your app.
-
-> Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically updates the DOM when the state of your app changes.
-]
-.unsplash-credit[
-<a href="https://unsplash.com/photos/f_rLDn5m2XQ" target="_blank" rel="noopener noreferrer">Oskar Kadaksoo</a>
-]
-
-???
-
-- Compiler
-- Not really a runtime framework
-
----
-
-<iframe data-src="https://svelte.dev/repl/9af3e3f3fe61495fb4d3a9f54f915057?version=3.16.3" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
-
----
-
-<iframe data-src="https://svelte.dev/repl/bbb9a55be2f5495c8f57308416dcaf80?version=3.16.3" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
-
----
-
-<iframe data-src="https://svelte.dev/repl/7ef5be3bbeb8405ca223e8c4059f9f25?version=3.16.3" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
-
----
-
-## React
-- Next
-- Gatsby
-
-## Vue
-- Nuxt
-- VuePress
-
-## Svelte
-- Sapper
-
----
-
-# Sapper
-
-> Sapper is a framework for building high-performance universal web apps. 
-
----
-
-# TypeScript Support
-
-- Svelte is written in TS
-- In templates some TS support
-
-</textarea
-    >
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-    <script>
-      function revealIframes() {
-        const iframes = document.querySelectorAll(
-          ".remark-visible iframe[data-src]"
-        );
-        iframes.forEach(i => (i.src = i.getAttribute("data-src")));
-      }
-
-      const slideshow = remark.create({
-        ratio: "16:9"
-      });
-
-      revealIframes();
-
-      slideshow.on("afterShowSlide", function(slide) {
-        revealIframes();
-        // const iframes = document.querySelectorAll(
-        //   ".remark-visible iframe[data-src]"
-        // );
-        // iframes.forEach(i => (i.src = i.getAttribute("data-src")));
-      });
-    </script>
-  </body>
+            slideshow.on('afterShowSlide', revealIframes);
+        </script>
+    </body>
 </html>
