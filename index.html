@@ -26,11 +26,21 @@
         font-weight: normal;
       }
 
+      blockquote {
+        border-left: 5px solid #cdcdcd;
+        padding-left: 20px;
+      }
+
       .unsplash-credit {
         padding: 0;
         position: fixed;
         bottom: 32px;
         right: 32px;
+      }
+
+      .unsplash-credit a::before {
+        content: "Photo: ";
+        display: inline;
       }
 
       .unsplash-credit a {
@@ -135,7 +145,7 @@ background-size: contain
 
 ---
 
-class: middle, center, bright-text
+class: bright-text
 background-image: url(https://source.unsplash.com/f_rLDn5m2XQ)
 
 .shadow[
@@ -157,14 +167,65 @@ background-image: url(https://source.unsplash.com/f_rLDn5m2XQ)
 
 ---
 
-<iframe src="https://svelte.dev/repl/9af3e3f3fe61495fb4d3a9f54f915057?version=3.16.3" style="border: 0; width: 100%; height: 100%;"></iframe>
+<iframe data-src="https://svelte.dev/repl/9af3e3f3fe61495fb4d3a9f54f915057?version=3.16.3" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
+
+---
+
+<iframe data-src="https://svelte.dev/repl/bbb9a55be2f5495c8f57308416dcaf80?version=3.16.3" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
+
+---
+
+<iframe data-src="https://svelte.dev/repl/7ef5be3bbeb8405ca223e8c4059f9f25?version=3.16.3" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
+
+---
+
+## React
+- Next
+- Gatsby
+
+## Vue
+- Nuxt
+- VuePress
+
+## Svelte
+- Sapper
+
+---
+
+# Sapper
+
+> Sapper is a framework for building high-performance universal web apps. 
+
+---
+
+# TypeScript Support
+
+- Svelte is written in TS
+- In templates some TS support
 
 </textarea
     >
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script>
-      var slideshow = remark.create({
+      function revealIframes() {
+        const iframes = document.querySelectorAll(
+          ".remark-visible iframe[data-src]"
+        );
+        iframes.forEach(i => (i.src = i.getAttribute("data-src")));
+      }
+
+      const slideshow = remark.create({
         ratio: "16:9"
+      });
+
+      revealIframes();
+
+      slideshow.on("afterShowSlide", function(slide) {
+        revealIframes();
+        // const iframes = document.querySelectorAll(
+        //   ".remark-visible iframe[data-src]"
+        // );
+        // iframes.forEach(i => (i.src = i.getAttribute("data-src")));
       });
     </script>
   </body>
