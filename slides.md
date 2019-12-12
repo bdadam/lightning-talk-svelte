@@ -72,35 +72,42 @@ background-image: url(https://source.unsplash.com/f_rLDn5m2XQ)
 - Template syntax similar to Handlebars and React
 - Single file components (like Vue)
 - CSS modules
-- Server side rendering with hydration supported
+- Server side rendering and client side hydration
+- Animations are first class citizens
 
 ---
 
-<iframe data-src="https://svelte.dev/repl/9af3e3f3fe61495fb4d3a9f54f915057?version=3.16.3" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
+<iframe data-src="https://svelte.dev/repl/9af3e3f3fe61495fb4d3a9f54f915057?version=3.16.4" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
 
 ---
 
-<iframe data-src="https://svelte.dev/repl/bbb9a55be2f5495c8f57308416dcaf80?version=3.16.3" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
+<iframe data-src="https://svelte.dev/repl/e430ad7e573445c6863533ee59c769d5?version=3.16.4" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
 
 ---
 
-<iframe data-src="https://svelte.dev/repl/7ef5be3bbeb8405ca223e8c4059f9f25?version=3.16.3" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
+<iframe data-src="https://svelte.dev/repl/bbb9a55be2f5495c8f57308416dcaf80?version=3.16.4" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
+
+---
+
+<iframe data-src="https://svelte.dev/repl/7ef5be3bbeb8405ca223e8c4059f9f25?version=3.16.4" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
+
+---
+
+<iframe data-src="https://svelte.dev/repl/bda01a8fd9a9477e8688f9e53ce53a3c?version=3.16.4" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
 
 ---
 
 ## React
 
-- Next
-- Gatsby
+Next, Gatsby
 
 ## Vue
 
-- Nuxt
-- VuePress
+Nuxt, VuePress
 
 ## Svelte
 
-- Sapper
+Sapper
 
 ---
 
@@ -110,7 +117,24 @@ background-image: url(https://source.unsplash.com/f_rLDn5m2XQ)
 
 ---
 
+class: center, middle
+
 # TypeScript Support
+
+- Svelte was written in TypeScript
+- TS can be used in `<script lang="ts"></script>` blocks
+- HTML Templates are not typechecked yet
+
+???
 
 - Svelte is written in TS
 - In templates some TS support
+
+---
+
+# Hello World Size
+
+| Framework | Minified, non-gzipped size |
+| :-------- | -------------------------: |
+| Svelte    |                        3KB |
+| React     |                      129KB |

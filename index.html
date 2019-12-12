@@ -87,6 +87,28 @@
                 color: #fff;
                 text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7 5);
             }
+
+            ul {
+                max-width: 30em;
+                margin: 0 auto;
+            }
+
+            ul > li {
+                text-align: left;
+                list-style: none;
+                position: relative;
+                margin: 0.4em 0;
+            }
+            ul > li::before {
+                content: '＊';
+                position: absolute;
+                left: -1.3em;
+                top: -2px;
+                color: #c0392b;
+            }
+            /* table {
+                width: 100%;
+            } */
         </style>
     </head>
     <body>
