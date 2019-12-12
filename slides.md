@@ -113,6 +113,8 @@ Sapper
 
 # Sapper
 
+> The next small thing in web development, powered by Svelte
+
 > Sapper is a framework for building high-performance universal web apps.
 
 ---
