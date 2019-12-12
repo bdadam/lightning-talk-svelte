@@ -97,6 +97,10 @@ background-image: url(https://source.unsplash.com/f_rLDn5m2XQ)
 
 ---
 
+<iframe data-src="https://svelte.dev/repl/62e3492acb344b929a57eccd00a77ebd?version=3.16.4" width="100%" height="100%" style="border: 0;" frameborder="0"></iframe>
+
+---
+
 ## React
 
 Next, Gatsby
